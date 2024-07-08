@@ -8,7 +8,7 @@ export const Header = () =>{
                     <div className="flex items-center lg:gap-x-16">
                      
                     <HeaderLogo>
-
+                    
                     </HeaderLogo>
 
 

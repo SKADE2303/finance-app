@@ -4,7 +4,7 @@ import Image from "next/image";
 export const HeaderLogo = () =>{
 
     return (
-        <Link href="">   
+        <Link href="/">   
           <div>
             Logo
           </div>
