@@ -1,6 +1,8 @@
+import { UserButton,ClerkLoading,ClerkLoaded } from "@clerk/nextjs";
 import { HeaderLogo } from "./HeaderLogo";
 import { Navigation } from "./Navigation";
-
+import {Loader2} from "lucide-react";
+import {WelcomeMsg} from "./welcome-msg";
 export const Header = () =>{
     return (
         <header className ="bg-gradient-to-b from-blue-800 to-blue-400 px-4 py-6 lg:px-14 pb-36">
@@ -10,12 +12,16 @@ export const Header = () =>{
                      
                     <HeaderLogo />
                     <Navigation />
-                    
-
-
                     </div>
+                   <ClerkLoaded>
+                   <UserButton afterSignOutUrl="/" />
+                   </ClerkLoaded> 
+                   <ClerkLoading>
+                    <Loader2 className="size-8 animate-spin text-slate-400"/>
+                   </ClerkLoading>
                    
                 </div>
+                <WelcomeMsg />
             </div>
            
         </header>
