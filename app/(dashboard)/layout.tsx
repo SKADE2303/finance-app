@@ -1,4 +1,5 @@
 import  { Header } from "@/components/ui/Header"
+import { Navigation } from "@/components/ui/Navigation"
 type Props ={
 children : React.ReactNode;
 }
