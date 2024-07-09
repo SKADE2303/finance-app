@@ -8,6 +8,13 @@
       "when": 1720542613929,
       "tag": "0000_loose_veda",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1720543269454,
+      "tag": "0001_amazing_lord_hawal",
+      "breakpoints": true
     }
   ]
 }
