@@ -13,7 +13,7 @@ app.onError((err,c)=> {
         return err.getResponse();
     }
 
-    return c.json({error : "Internal Server Error"});
+    return c.json({error : "Internal Server Error"},500);
 })
 
 const routes = app.route("/accounts", accounts);
