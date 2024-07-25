@@ -4,11 +4,11 @@ import {Card,CardContent,CardTitle,CardHeader }  from "@/components/ui/card";
 import { Button } from "@/components/ui/button"
 import {Plus} from "lucide-react"
 import { useNewAccount } from "@/features/accounts/hooks/use-new-account";
-import { Payment,columns } from "./columns";
+import { columns } from "./columns";
 import { DataTable } from "@/components/ui/data-table";
 
 
-const data: Payment[] =  [
+const data: =  [
     {
       id: "728ed52f",
       amount: 100,

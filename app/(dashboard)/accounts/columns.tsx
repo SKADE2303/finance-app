@@ -1,21 +1,17 @@
 "use client"
 
+import { InferResponseType } from "hono"
 import { Button } from "@/components/ui/button"
 import { ColumnDef } from "@tanstack/react-table"
 import { Checkbox } from "@/components/ui/checkbox"
+import {client} from "@/lib/hono"
 
 import { ArrowUpDown } from "lucide-react"
 
-// This type is used to define the shape of our data.
-// You can use a Zod schema here if you want.
-export type Payment = {
-  id: string
-  amount: number
-  status: "pending" | "processing" | "success" | "failed"
-  email: string
-}
 
-export const columns: ColumnDef<Payment>[] = [
+export type ResponseType = InferResponseType<typeof client.api.accounts.$get,200>["data"][0];
+
+export const columns: ColumnDef<ResponseType>[] = [
   {
     id: "select",
     header: ({ table }) => (
