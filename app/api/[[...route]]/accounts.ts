@@ -34,6 +34,7 @@ import { createId } from "@paralleldrive/cuid2"
       clerkMiddleware(),
 
       async (c) =>{
+        try{
         const auth = await getAuth(c);
         const values = c.req.valid("json");
 
@@ -50,12 +51,16 @@ import { createId } from "@paralleldrive/cuid2"
 
 
         return c.json({ data });
+      } catch (error){
+        console.error("Error inserting account:", error); 
+        return c.json({error: " Failed"},500);
+      }
       }
     )
 
-app.get("/",(c)=>{
-    return c.json({accounts:[]});
-})
+// app.get("/",(c)=>{
+//     return c.json({accounts:[]});
+// })
 
 export default app;
 
