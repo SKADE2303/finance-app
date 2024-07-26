@@ -46,7 +46,7 @@ export function DataTable<TData, TValue>({
   disabled,
 }: DataTableProps<TData, TValue>) {
 
-    const [confirmDialog,confirm]= useConfirm(
+    const [ConfirmDialog,confirm]= useConfirm(
         "Are you sure?",
         "You are about to perform a bulk delete."
     )
@@ -78,7 +78,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <div>
-        <ConfirmDialog></ConfirmDialog>
+        <ConfirmDialog />
         <div className="flex items-center py-4">
         <Input
           placeholder={`Filter ${filterKey}... `}
@@ -89,9 +89,14 @@ export function DataTable<TData, TValue>({
           className="max-w-sm"
         />
         {table.getFilteredSelectedRowModel().rows.length >0 && (
-            <Button size="sm" variant="outline" className="ml-auto font-normal text-xs" disabled={disabled} onClick={()=>{
+            <Button size="sm" variant="outline" className="ml-auto font-normal text-xs" disabled={disabled} onClick={async ()=>{
+                
+                const ok = await confirm();
+                
+                if(ok){
                 onDelete(table.getFilteredSelectedRowModel().rows)
                 table.resetRowSelection();
+                }
             }}>
                 <Trash className="size-4 mr-2"  />
                 Delete ({table.getFilteredSelectedRowModel().rows.length})
