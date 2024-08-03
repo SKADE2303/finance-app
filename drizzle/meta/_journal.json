@@ -15,6 +15,13 @@
       "when": 1720543269454,
       "tag": "0001_amazing_lord_hawal",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1722691553675,
+      "tag": "0002_stale_gravity",
+      "breakpoints": true
     }
   ]
 }
